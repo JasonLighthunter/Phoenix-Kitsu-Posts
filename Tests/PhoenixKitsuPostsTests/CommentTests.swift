@@ -170,6 +170,8 @@ class CommentTests: XCTestCase {
     XCTAssertEqual(comment?.objectID, "4")
     XCTAssertEqual(comment?.type, "comments")
     
+    XCTAssertNotNil(comment?.links)
+    
     XCTAssertNotNil(commentAttributes)
     
     XCTAssertEqual(commentAttributes?.createdAt, "2014-08-07T19:08:14.364Z")
