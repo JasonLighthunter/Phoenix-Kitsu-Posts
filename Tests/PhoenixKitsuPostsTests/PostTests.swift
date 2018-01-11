@@ -99,7 +99,7 @@ class PostTests: XCTestCase {
   
   let invalidNilDataJSON: [String : Any?] = [
     "id": "4",
-    "type": "postLikes",
+    "type": "posts",
     "links": [
       "self": "https://kitsu.io/api/edge/posts/4"
     ],
@@ -254,8 +254,16 @@ class PostTests: XCTestCase {
     } else {
       post = nil
     }
+    postAttributes = post?.attributes
     
-    XCTAssertNil(post)
+    XCTAssertNotNil(post)
+    
+    XCTAssertEqual(post?.objectID, "4")
+    XCTAssertEqual(post?.type, "posts")
+    
+    XCTAssertNotNil(post?.links)
+    
+    XCTAssertNil(postAttributes)
   }
   
   func testPostInvalidNilData() {
@@ -267,8 +275,16 @@ class PostTests: XCTestCase {
     } else {
       post = nil
     }
+    postAttributes = post?.attributes
     
-    XCTAssertNil(post)
+    XCTAssertNotNil(post)
+    
+    XCTAssertEqual(post?.objectID, "4")
+    XCTAssertEqual(post?.type, "posts")
+    
+    XCTAssertNotNil(post?.links)
+    
+    XCTAssertNil(postAttributes)
   }
 }
 

@@ -1,19 +1,8 @@
 import PhoenixKitsuCore
+import Requestable
 
-public class Post: KitsuObject {
+public class Post: KitsuObject<PostAttributes>, Requestable {
   public static var requestURLString = "posts"
-  
-  public let objectID: String
-  public let type: String
-  public let links: Links
-  public let attributes: PostAttributes?
-  
-  private enum CodingKeys: String, CodingKey {
-    case objectID = "id"
-    case type
-    case links
-    case attributes
-  }
 }
 
 public class PostAttributes: KitsuObjectAttributesWithTimestamp {

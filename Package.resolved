@@ -2,11 +2,20 @@
   "object": {
     "pins": [
       {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": null,
+          "revision": "bc973c5311ce3db3f01a9fcde027fb11fa2254bf",
+          "version": "4.6.0"
+        }
+      },
+      {
         "package": "PhoenixKitsuCore",
         "repositoryURL": "https://github.com/JasonLighthunter/Phoenix-Kitsu-Core.git",
         "state": {
           "branch": "setup",
-          "revision": "760d9564bb9f8ff12ac2eaf1ed11d29ef4db9f0c",
+          "revision": "34dde99c74ae41c4f4257d86ce23d8f35915668e",
           "version": null
         }
       },

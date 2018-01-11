@@ -148,8 +148,14 @@ class CommentLikeTests: XCTestCase {
     } else {
       commentLike = nil
     }
+    commentLikeAttributes = commentLike?.attributes
     
-    XCTAssertNil(commentLike)
+    XCTAssertNotNil(commentLike)
+    
+    XCTAssertEqual(commentLike?.objectID, "4")
+    XCTAssertEqual(commentLike?.type, "commentLikes")
+    
+    XCTAssertNil(commentLikeAttributes)
   }
   
   func testCommentLikeInvalidNilData() {
@@ -161,7 +167,13 @@ class CommentLikeTests: XCTestCase {
     } else {
       commentLike = nil
     }
+    commentLikeAttributes = commentLike?.attributes
     
-    XCTAssertNil(commentLike)
+    XCTAssertNotNil(commentLike)
+    
+    XCTAssertEqual(commentLike?.objectID, "4")
+    XCTAssertEqual(commentLike?.type, "commentLikes")
+    
+    XCTAssertNil(commentLikeAttributes)
   }
 }

@@ -148,8 +148,14 @@ class PostLikeTests: XCTestCase {
     } else {
       postLike = nil
     }
+    postLikeAttributes = postLike?.attributes
     
-    XCTAssertNil(postLike)
+    XCTAssertNotNil(postLike)
+    
+    XCTAssertEqual(postLike?.objectID, "4")
+    XCTAssertEqual(postLike?.type, "postLikes")
+    
+    XCTAssertNil(postLikeAttributes)
   }
   
   func testPostLikeInvalidNilData() {
@@ -161,8 +167,14 @@ class PostLikeTests: XCTestCase {
     } else {
       postLike = nil
     }
+    postLikeAttributes = postLike?.attributes
     
-    XCTAssertNil(postLike)
+    XCTAssertNotNil(postLike)
+    
+    XCTAssertEqual(postLike?.objectID, "4")
+    XCTAssertEqual(postLike?.type, "postLikes")
+    
+    XCTAssertNil(postLikeAttributes)
   }
 }
 

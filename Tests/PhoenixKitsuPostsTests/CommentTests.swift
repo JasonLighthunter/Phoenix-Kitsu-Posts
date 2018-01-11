@@ -77,11 +77,11 @@ class CommentTests: XCTestCase {
   
   let invalidMissingDataJSON: [String : Any] = [
     "id": "4",
+    "type": "comments",
     "links": [
       "self": "https://kitsu.io/api/edge/comments/4"
     ],
     "attributes": [
-      "createdAt": "2014-08-07T19:08:14.364Z",
       "updatedAt": "2014-08-07T19:08:14.364Z",
       "content": "This is a test",
       "contentFormatted": "This is a formatted test",
@@ -111,12 +111,12 @@ class CommentTests: XCTestCase {
   
   let invalidNilDataJSON: [String : Any?] = [
     "id": "4",
-    "type": nil,
+    "type": "comments",
     "links": [
       "self": "https://kitsu.io/api/edge/comments/4"
     ],
     "attributes": [
-      "createdAt": "2014-08-07T19:08:14.364Z",
+      "createdAt": nil,
       "updatedAt": "2014-08-07T19:08:14.364Z",
       "content": "This is a test",
       "contentFormatted": "This is a formatted test",
@@ -260,8 +260,14 @@ class CommentTests: XCTestCase {
     } else {
       comment = nil
     }
+    commentAttributes = comment?.attributes
     
-    XCTAssertNil(comment)
+    XCTAssertNotNil(comment)
+    
+    XCTAssertEqual(comment?.objectID, "4")
+    XCTAssertEqual(comment?.type, "comments")
+    
+    XCTAssertNil(commentAttributes)
   }
   
   func testCommentInvalidNilData() {
@@ -273,7 +279,13 @@ class CommentTests: XCTestCase {
     } else {
       comment = nil
     }
+    commentAttributes = comment?.attributes
     
-    XCTAssertNil(comment)
+    XCTAssertNotNil(comment)
+    
+    XCTAssertEqual(comment?.objectID, "4")
+    XCTAssertEqual(comment?.type, "comments")
+    
+    XCTAssertNil(commentAttributes)
   }
 }

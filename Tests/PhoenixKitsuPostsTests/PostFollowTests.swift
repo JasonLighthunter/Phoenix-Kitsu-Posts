@@ -148,8 +148,14 @@ class PostFollowTests: XCTestCase {
     } else {
       postFollow = nil
     }
+    postFollowAttributes = postFollow?.attributes
     
-    XCTAssertNil(postFollow)
+    XCTAssertNotNil(postFollow)
+    
+    XCTAssertEqual(postFollow?.objectID, "4")
+    XCTAssertEqual(postFollow?.type, "postFollows")
+    
+    XCTAssertNil(postFollowAttributes)
   }
   
   func testPostFollowInvalidNilData() {
@@ -161,8 +167,14 @@ class PostFollowTests: XCTestCase {
     } else {
       postFollow = nil
     }
+    postFollowAttributes = postFollow?.attributes
     
-    XCTAssertNil(postFollow)
+    XCTAssertNotNil(postFollow)
+    
+    XCTAssertEqual(postFollow?.objectID, "4")
+    XCTAssertEqual(postFollow?.type, "postFollows")
+    
+    XCTAssertNil(postFollowAttributes)
   }
 }
 
